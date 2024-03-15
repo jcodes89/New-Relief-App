@@ -1,0 +1,11 @@
+.nav{
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.navLink{
+    margin-left: 1rem;
+}
