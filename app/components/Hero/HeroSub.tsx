@@ -24,7 +24,7 @@ const HeroSub = () => {
             <header className=' items-center  pb-2 '>
                 <h2 className='text-sky-950 font-bold text-[1.75rem] text-center underline bg-yellow-300 p-3 '>Why Volunteer?</h2>
             </header>
-            <main className='px-4 mx-4'>
+            <main className='px-4 mx-4 lg:grid lg:grid-cols-2 lg:gap-4 '>
                 {heroData.map(createCard)}
             </main>
         </div>
