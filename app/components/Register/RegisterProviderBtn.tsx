@@ -123,6 +123,7 @@ export default function RegisterProviderBtn(props: any){
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-yellow-300 px-3 py-1.5 text-sm font-semibold leading-6 text-sky-950 shadow-sm hover:bg-sky-950 hover:text-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
+                Register
               </button>
             </div>
           </form>
