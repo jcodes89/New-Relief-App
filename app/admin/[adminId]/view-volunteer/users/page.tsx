@@ -2,7 +2,7 @@
 import avatar from '@/public/images/svg/user-solid.svg'
 import VolunteerCard from "@/app/components/Card/VolunteerCard";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/data/lib/NextAuthOptions";
 import BackToTopBtn from "@/app/components/Buttons/BackToTopBtn";
 
 interface User{

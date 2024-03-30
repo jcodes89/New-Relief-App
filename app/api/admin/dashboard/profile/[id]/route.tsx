@@ -40,11 +40,10 @@ export async function PUT(request: NextRequest, {params}: {params: {id: any}}){
             id: params.id
         },
         data: {
-            firstName: body.firstName,
-            lastName: body.lastName,
+            name: body.name,
             email: body.email, 
             role: body.role,
-            active: body.active,
+            status:body.status
             
         }
     })
