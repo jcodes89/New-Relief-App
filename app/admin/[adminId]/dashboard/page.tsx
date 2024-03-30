@@ -20,5 +20,5 @@ export default async function AdminDashboard(id: any){
             />
         </div>
     )
-    }
+}
  

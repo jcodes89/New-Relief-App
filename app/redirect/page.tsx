@@ -19,7 +19,7 @@ export default function redirect(){
             <h3 className='px-2 font-bold pb-2'>Please try the following:</h3>
             <ol className='px-2'>
                 <li className='list-item list-disc'>Contact the Web site administrator if you believe you should be able to view this directory or page.</li>
-                <li className='list-item list-disc'>Contact Disaster Relief Administration for further inquiry's.</li>
+                <li className='list-item list-disc'>Contact Disaster Relief Administration for any further questions.</li>
             </ol>
           </div>
           <Link className='btn btn-link text-sky-950 hover:text-purple-950' href={'/'}>Go back to home page</Link>

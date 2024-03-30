@@ -3,9 +3,6 @@ import { getServerSession } from "next-auth"
 import { authOptions } from "../../api/auth/[...nextauth]/route"
 import Image from "next/image";
 import userSvg from '../../../public/images/svg/user-solid.svg'
-import DashboardImg from './DashboardImg';
-import ImageCropper from '../AvatarCrop/Modal';
-import Modal from '../AvatarCrop/Modal';
 
 const DashboardHeader = async () => {
     const session = await getServerSession(authOptions);
@@ -15,10 +12,9 @@ const DashboardHeader = async () => {
             <div className="flex flex-col bg-sky-950 justify-between h-auto items-center">
                 <div>
                 <Image
-                className=" h-[7rem] w-[7rem] rounded-badge ring-2 m-3 -mb-2 p-2 ring-yellow-300 bg-slate-200 "
+                className=" h-[7rem] w-[7rem] rounded-badge ring-2 m-3 mb-4 p-2 ring-yellow-300 bg-slate-200 "
                 src={userSvg} alt=""
                  />
-                <Modal/>
                 
                 </div>
                     <div className="m-2 pb-2 font-medium text-yellow-300 text-center">
@@ -28,7 +24,6 @@ const DashboardHeader = async () => {
                         <p>Welcome to your Dashboard</p>
                     </div>
             </div>
-        
         </>
   )
 }

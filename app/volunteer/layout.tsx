@@ -11,7 +11,7 @@ export default function VolunteerLayout({children}: any){
         </nav>
         <div className="">
           <main className="">
-            <DashboardImg/>
+            {/* <DashboardImg/> */}
             {children}
             <Footer/>
           </main>

@@ -2,7 +2,7 @@ import AdminNavbar from "../components/AdminNavbar/AdminNavbar";
 import Script from "next/script";
 import Footer from "../components/Footer/Footer";
 import DashboardImg from "../components/Dashboard/DashboardImg";
-import BackToTopBtn from "../components/Buttons/BackToTopBtn";
+
 
 
 export default function AdminLayout({children}:any){
@@ -15,7 +15,7 @@ export default function AdminLayout({children}:any){
       </nav>
       <div className="bg-slate-200">
         <main className="">
-          <DashboardImg/>
+          {/* <DashboardImg/> */}
           {children}
         </main>
         <Footer/>

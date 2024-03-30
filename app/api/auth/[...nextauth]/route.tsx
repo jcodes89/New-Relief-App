@@ -5,8 +5,7 @@ import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 import clientPromise from "@/app/data/lib/mongodb";
 import EmailProvider from "next-auth/providers/email";
 import Github from "next-auth/providers/github";
-import { createTransport } from "nodemailer";
-import {EmailConfig} from 'next-auth/providers/email'
+
 import prisma from "@/prisma/client";
 import CredentialsProvider from 'next-auth/providers/credentials'
 import bcrypt, { compare, hash } from 'bcrypt'
@@ -58,18 +57,18 @@ export const authOptions: NextAuthOptions = {
 
       }
     }),
-    EmailProvider({
-      maxAge: 100,
-      server: {
-        host: process.env.SMTP_HOST,
-        port: Number(process.env.SMTP_PORT),
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASSWORD,
-        },
-      },
-      from: process.env.EMAIL_FROM,
-    }),
+    // EmailProvider({
+    //   maxAge: 100,
+    //   server: {
+    //     host: process.env.SMTP_HOST,
+    //     port: Number(process.env.SMTP_PORT),
+    //     auth: {
+    //       user: process.env.SMTP_USER,
+    //       pass: process.env.SMTP_PASSWORD,
+    //     },
+    //   },
+    //   from: process.env.EMAIL_FROM,
+    // }),
     Github({
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
@@ -118,7 +117,6 @@ export const authOptions: NextAuthOptions = {
       if(trigger === 'update' && session.image){
         token.image = session.image
       }
-      
       if(user){
         token.id = user.id
         token.email = user.email
@@ -127,7 +125,6 @@ export const authOptions: NextAuthOptions = {
         token.number = user.number
         token.image = user.image
       }
-
        await prisma.user.update({
         where: {
           id: token.id
@@ -141,7 +138,6 @@ export const authOptions: NextAuthOptions = {
         }
       })
       return token
-     
       //update user in database
     },
     async session({session, token, trigger, newSession, user}: any){
@@ -153,21 +149,8 @@ export const authOptions: NextAuthOptions = {
           session.user.number = token.number
           session.user.image = token.image
         }
-        
-          return session
-      
+         return session
     },
-    // async signIn({ user, account, profile, email, credentials }) {
-    //   const isAllowedToSignIn = true
-    //   if (isAllowedToSignIn) {
-    //     return true
-    //   } else {
-    //     // Return false to display a default error message
-    //     return false
-    //     // Or you can return a URL to redirect to:
-    //     // return '/unauthorized'
-    //   }
-    // }
   },
   pages: {
     signIn: '/login'
@@ -175,7 +158,6 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt'
   }
-  
 }
 
 const handler = nextAuth(authOptions)

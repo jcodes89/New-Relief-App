@@ -42,24 +42,4 @@ export async function POST(request: NextRequest){
     })
 
     return NextResponse.json(newUser, {status: 200})
-
- 
-    // if(!user){
-    //     console.log('no user exists with these credentials');
-        
-    //     const newUser = await prisma.user.create({
-    //         data: {
-    //             name: body.name,
-    //             email: body.email,
-    //             password: hashedPassword 
-    //         }
-    //     })
-
-    //     return NextResponse.json(newUser)
-    // }
-    
-    // if(user){
-    //     return NextResponse.json(user)
-    // }
-
 }

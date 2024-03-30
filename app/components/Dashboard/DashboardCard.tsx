@@ -8,8 +8,8 @@ const DashboardCard = async (props: any) => {
     const session = await getServerSession(authOptions);
 
   return (
-    <div className='bg-slate-200 '>
-        <div className=" px-5 border-t border-slate-200 h-screen">
+    <div className='bg-slate-200 w-full h-full  lg:flex lg:flex-col lg:justify-center lg:items-center'>
+        <div className="lg:w-2/3 xl:w-1/2 2xl:w-2/3  px-5 border-t border-slate-200 h-screen">
             <h2 className='p-2 font-semibold border-2 border-b-yellow-300 '>Personal Information</h2>
             <dl className="divide-y divide-sky-950">
                 <div className="px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">

@@ -2,8 +2,6 @@
 import React from 'react';
 import heroData from '../../data/HeroData';
 import HeroCard from './HeroCard';
-import Image from 'next/image';
-import { gsap } from "gsap";
 
 
 function createCard(data: any) {

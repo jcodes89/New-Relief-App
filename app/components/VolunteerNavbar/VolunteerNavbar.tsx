@@ -18,18 +18,15 @@ export default async function AdminNavbar(id: any) {
                 <Image priority className="" height={100} width={100} src={logoPic}alt="picture of logo"/>
             </Link>
             </div>
-              {/* <Link href={`/admin/main/${session?.user.id}/dashboard`}>link</Link> */}
             <div>
                 <NavBtn
                     href={`/volunteer/${session?.user.id}/dashboard`}
                     link='Dashboard'
                 />
-                   
                 <NavBtn
                     href='/api/auth/signout'
                     link='Sign Out'
                 />
-            
             </div>
             <div className="dropdown dropdown-bottom dropdown-end sm:hidden ">
             <div tabIndex={0} role="button" className=" fa-solid fa-bars mx-4 scale-150 text-sky-950"></div>

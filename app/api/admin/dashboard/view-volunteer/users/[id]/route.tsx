@@ -27,12 +27,9 @@ export async function GET(request: NextRequest, {params}: {params: {id: any}}) {
     ])
 }
 
-
-
 export async function PUT(request:NextRequest, {params}: {params: {id: any}}) {
     const body = await request.json();
     const validation = schema.safeParse(body)
-    const now = new Date().toLocaleTimeString()
     
     if (!validation.success){
         return NextResponse.json(validation.error.errors, {status: 401})
@@ -62,11 +59,8 @@ export async function PUT(request:NextRequest, {params}: {params: {id: any}}) {
             number: body.number,
             email: body.email,
             role: body.role,
-            
         }
-
     })
 
-  
     return NextResponse.json(updatedUser)
 }

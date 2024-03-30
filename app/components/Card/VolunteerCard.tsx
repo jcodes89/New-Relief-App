@@ -1,16 +1,8 @@
-
+'use client'
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import axios from 'axios';
-
 
 const VolunteerCard = (props: any) => {
-
-   
-
-
-
   return (
     <div className="card flex  text-yellow-300 m-4 rounded-lg shadow-lg shadow-sky-950 mb-10 ">
         <div className="card-head flex justify-items-center justify-center bg-sky-950 rounded-t-lg w-full py-2">
@@ -41,8 +33,6 @@ const VolunteerCard = (props: any) => {
                     <dd className="textarea text-sm leading-6 text-sky-950 sm:col-span-2 sm:mt-0 mt-1">{props.number}</dd>
                 </div>
             </dl> 
-            
-                
             
         </div>
     </div>

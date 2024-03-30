@@ -9,7 +9,6 @@ export default async function RegisterPage() {
     return (
         <div>
             <HomeNavbar/>
-            
             <RegisterProviderBtn/>
         </div>
     )
