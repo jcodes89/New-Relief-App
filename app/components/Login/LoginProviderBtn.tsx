@@ -35,8 +35,10 @@ import googleImg from '@/public/images/7123025_logo_google_g_icon.png'
           
           if(res?.ok){
             router.refresh()
-            router.push('/')
+          }else {
+            alert('Incorrect email or password, please try again.')
           }
+          router.push('/')
 
         } catch (error) {
           console.log(error);
@@ -109,6 +111,7 @@ import googleImg from '@/public/images/7123025_logo_google_g_icon.png'
               </div>
             <div>
             <button
+              aria-label='Login in as a user'
               type="submit"
               className="flex w-full justify-center rounded-md text-sky-950  bg-yellow-300 px-3 py-1.5 text-sm font-semibold leading-6  shadow-sm hover:text-yellow-300 hover:bg-sky-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
@@ -123,7 +126,7 @@ import googleImg from '@/public/images/7123025_logo_google_g_icon.png'
               <span className='px-1 font-semibold'>OR</span>
             <span className=''>-</span>
           </div>
-          <button className='btn btn-circle bg-white w-auto px-4 hover:bg-black hover:text-white' onClick={handleClick}>
+          <button aria-label='Sign in with google' className='btn btn-circle bg-white w-auto px-4 hover:bg-black hover:text-white' onClick={handleClick}>
             <Image src={googleImg} alt='image of google logo'/>
             Sign in with Google
           </button>

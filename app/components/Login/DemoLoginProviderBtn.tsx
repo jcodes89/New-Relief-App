@@ -32,8 +32,11 @@ import { useSession } from 'next-auth/react';
           })
           
           if(res?.ok){
-            router.push('/')
+            router.refresh()
+          } else {
+            alert('Incorrect email or password, please try again.')
           }
+          router.push('/')
 
         } catch (error) {
           console.log(error);
@@ -103,6 +106,7 @@ import { useSession } from 'next-auth/react';
             </div>
             <div>
                 <button
+                  aria-label='Login as a demo user'
                   type="submit"
                   className="flex w-full justify-center rounded-md text-sky-950  bg-yellow-300 px-3 py-1.5 text-sm font-semibold leading-6  shadow-sm hover:text-yellow-300 hover:bg-sky-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >

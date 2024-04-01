@@ -16,7 +16,7 @@ export default async function HomeNavbar() {
             <nav className='navbar p-2 justify-between bg-slate-100' >
                 <div>
                     <Link href={'/'}>
-                        <Image className="" src={logoPic}width={100} height={100} alt="picture of logo"/>
+                        <Image className=" w-auto h-auto" src={logoPic} width={100} height={100} alt="picture of logo"/>
                     </Link>
                 </div>
     

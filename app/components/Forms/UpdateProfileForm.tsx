@@ -97,6 +97,8 @@ const UpdateProfileForm = () => {
                             />
                             <div className='flex = pt-5 justify-center'> 
                                 <button 
+                                    aria-label='submits form to update profile information'
+                                    
                                     className=' btn btn-square w-40 bg-yellow-300 text-sky-950 hover:bg-sky-950 hover:text-yellow-300 hover:scale-110' 
                                     onClick={handleClick}
                                     >Submit

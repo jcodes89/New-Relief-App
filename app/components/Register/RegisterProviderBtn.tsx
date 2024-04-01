@@ -120,6 +120,7 @@ export default function RegisterProviderBtn(props: any){
             </div>
             <div>
               <button
+                aria-label='Register as a user'
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-yellow-300 px-3 py-1.5 text-sm font-semibold leading-6 text-sky-950 shadow-sm hover:bg-sky-950 hover:text-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
@@ -134,7 +135,7 @@ export default function RegisterProviderBtn(props: any){
               <span className='px-1 font-semibold'>OR</span>
             <span className=''>-</span>
           </div>
-          <button className='btn btn-circle bg-white w-auto px-4 hover:bg-black hover:text-white' onClick={handleClick}>
+          <button aria-label='Sign in with Google' className='btn btn-circle bg-white w-auto px-4 hover:bg-black hover:text-white' onClick={handleClick}>
             <Image src={googleImg} alt='image of google logo'/>
             Sign in with Google
           </button>

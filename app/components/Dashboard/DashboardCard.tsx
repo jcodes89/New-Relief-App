@@ -37,7 +37,7 @@ const DashboardCard = async (props: any) => {
                 </div>
                
                 <div className=' flex justify-center pt-5 '>
-                    <Link className='btn btn-square w-40 bg-yellow-300 text-sky-950 hover:bg-sky-950 hover:text-yellow-300 hover:scale-110' href={props.href}>Update Profile</Link>
+                    <Link aria-label='Update user profile' className='btn btn-square w-40 bg-yellow-300 text-sky-950 hover:bg-sky-950 hover:text-yellow-300 hover:scale-110' href={props.href}>Update Profile</Link>
                 </div>
             </dl>
       </div>

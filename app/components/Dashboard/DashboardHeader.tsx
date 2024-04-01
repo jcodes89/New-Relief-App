@@ -12,6 +12,7 @@ const DashboardHeader = async () => {
             <div className="flex flex-col bg-sky-950 justify-between h-auto items-center">
                 <div>
                 <Image
+                loading='eager'
                 className=" h-[7rem] w-[7rem] rounded-badge ring-2 m-3 mb-4 p-2 ring-yellow-300 bg-slate-200 "
                 src={userSvg} alt=""
                  />

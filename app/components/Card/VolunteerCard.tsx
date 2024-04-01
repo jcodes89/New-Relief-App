@@ -7,7 +7,7 @@ const VolunteerCard = (props: any) => {
     <div className="card flex  text-yellow-300 m-4 rounded-lg shadow-lg shadow-sky-950 mb-10 ">
         <div className="card-head flex justify-items-center justify-center bg-sky-950 rounded-t-lg w-full py-2">
             <div className="">
-                <Image className='h-[8rem] w-[8rem] rounded-badge ring-2 m-3 ml-5  ring-yellow-300 bg-slate-200' src={props.img} alt="picture of profile image" width={150} height={150}/>
+                <Image loading='eager' className='h-[8rem] w-[8rem] rounded-badge ring-2 m-3 ml-5  ring-yellow-300 bg-slate-200' src={props.img} alt="picture of profile image"/>
             </div>
         </div>
         <div className="border-t-2 border-yellow-300 bg-slate-200 rounded-b-lg">
