@@ -4,11 +4,11 @@ interface User {
     AdminRole: string
 }
 
-if (!process.env.DATABASE_URL) {
+if (!process.env.MONGODB_URI) {
   throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
 }
 
-const uri = process.env.DATABASE_URL
+const uri = process.env.MONGODB_URI
 
 
 let client
