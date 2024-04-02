@@ -1,4 +1,4 @@
-import { authOptions } from "@/app/data/lib/NextAuthOptions";
+import  authOptions  from "@/app/api/auth/[...nextauth]/options";
 import DashboardHeader from "@/app/components/Dashboard/DashboardHeader";
 import { getServerSession } from "next-auth";
 import React from "react";
