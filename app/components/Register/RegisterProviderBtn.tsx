@@ -20,7 +20,7 @@ export default function RegisterProviderBtn(props: any){
     e.preventDefault();
     try {
       const res = await axios({
-          url: 'http://localhost:3000/api/register',
+          url: 'https://new-relief-app.vercel.app/register',
           method: 'POST',
           data: credentials
       })
