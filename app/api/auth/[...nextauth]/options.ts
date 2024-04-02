@@ -21,37 +21,42 @@ import { NextResponse } from "next/server";
       credentials: {}, 
       async authorize(credentials, req): Promise<any>{
         //safe parse credentials 
-        const parsedCredentials = schema.safeParse(credentials);
-        if(!parsedCredentials.success){
-          return NextResponse.json('parsed credentials not successful')
-        }
+        try{
 
-        const {email, password} = parsedCredentials.data;
-        //check to see if email or password field is provided
-        if(!email || !password){
-          return NextResponse.json('one or more fields is not provided')
+            const parsedCredentials = schema.safeParse(credentials);
+            if(!parsedCredentials.success){
+              return NextResponse.json('parsed credentials not successful')
+            }
+    
+            const {email, password} = parsedCredentials.data;
+            //check to see if email or password field is provided
+            if(!email || !password){
+              return NextResponse.json('one or more fields is not provided')
+            }
+            //find user 
+            const user = await prisma.user.findUnique({
+              where: {
+                email: email
+              }
+            })
+            
+            if(!user){
+              console.log('no user');
+              
+              return null
+            }
+            //check to see if the users password provided in the input field comparable to hashed password from database when user registered
+            const isPasswordValid = await bcrypt.compare(password, user.password!);
+    
+            if(isPasswordValid){
+              return user
+            }
+    
+            console.log('password not valid');
+            return null
+        } catch(err){
+            throw new Error('next auth - authorize: authentication error')
         }
-        //find user 
-        const user = await prisma.user.findUnique({
-          where: {
-            email: email
-          }
-        })
-        
-        if(!user){
-          console.log('no user');
-          
-          return null
-        }
-        //check to see if the users password provided in the input field comparable to hashed password from database when user registered
-        const isPasswordValid = await bcrypt.compare(password, user.password!);
-
-        if(isPasswordValid){
-          return user
-        }
-
-        console.log('password not valid');
-        return null
 
       } 
       
