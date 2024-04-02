@@ -153,3 +153,4 @@ const authOptions: NextAuthOptions = {
 const handler = nextAuth(authOptions)
 
 export {handler as GET, handler as POST}
+export default authOptions
