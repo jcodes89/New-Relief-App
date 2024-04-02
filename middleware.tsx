@@ -11,7 +11,7 @@ export default withAuth(function middleware(req){
         req.nextUrl.pathname.startsWith("/admin") && 
         req.nextauth.token?.role != "admin"
         ) {
-            return NextResponse.redirect(new URL('http://localhost:3000/redirect'))
+            return NextResponse.redirect(new URL('https://new-relief-app.vercel.app/redirect'))
         }
     }, {
     callbacks: {

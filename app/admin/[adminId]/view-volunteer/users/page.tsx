@@ -18,7 +18,7 @@ interface User{
 export default async function VolunteerUsers(){
     await getServerSession(authOptions)
 
-    const res = await fetch(`http://localhost:3000/api/admin/dashboard/view-volunteer/users`)
+    const res = await fetch(`https://new-relief-app.vercel.app/api/admin/dashboard/view-volunteer/users`)
     
     const users: User[] = await res.json()
 
