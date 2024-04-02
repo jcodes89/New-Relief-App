@@ -14,9 +14,9 @@ export const authOptions: NextAuthOptions = {
     adapter: MongoDBAdapter(clientPromise),
     providers: [
       CredentialsProvider({
-        id: 'credentials',
-        name: 'Credentials', 
-        type: "credentials",
+        // id: 'credentials',
+        // name: 'Credentials', 
+        // type: "credentials",
         credentials: {
           
         }, 
