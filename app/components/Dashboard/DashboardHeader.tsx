@@ -1,6 +1,6 @@
 import React from 'react'
 import { getServerSession } from "next-auth"
-import  {authOptions}  from "@/app/api/auth/[...nextauth]/route";
+import  authOptions  from "@/app/api/auth/[...nextauth]/route";
 import Image from "next/image";
 import userSvg from '../../../public/images/svg/user-solid.svg'
 

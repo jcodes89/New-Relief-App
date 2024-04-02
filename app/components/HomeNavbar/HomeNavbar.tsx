@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logoPic from '../../../public/images/disaster.png'
 import { getServerSession } from "next-auth";
-import  {authOptions}  from "@/app/api/auth/[...nextauth]/route";
+import  authOptions  from "@/app/api/auth/[...nextauth]/route";
 
 
 
