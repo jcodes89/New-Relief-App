@@ -21,7 +21,6 @@ import { NextResponse } from "next/server";
       credentials: {}, 
       async authorize(credentials, req): Promise<any>{
         //safe parse credentials 
-        try{
 
             const parsedCredentials = schema.safeParse(credentials);
             if(!parsedCredentials.success){
@@ -54,9 +53,7 @@ import { NextResponse } from "next/server";
     
             console.log('password not valid');
             return null
-        } catch(err){
-            throw new Error('next auth - authorize: authentication error')
-        }
+        
 
       } 
       
