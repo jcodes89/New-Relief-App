@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma migrate deploy"
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@next-auth/mongodb-adapter": "^1.1.3",
