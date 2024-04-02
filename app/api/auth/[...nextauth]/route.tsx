@@ -13,7 +13,7 @@ import { NextResponse } from "next/server";
 // import {authOptions} from '@/app/data/lib/NextAuthOptions'
 
 
-export const authOptions: NextAuthOptions = {
+ const authOptions: NextAuthOptions = {
   adapter: MongoDBAdapter(clientPromise),
   providers: [
     CredentialsProvider({
