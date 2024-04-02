@@ -149,6 +149,7 @@ import { NextResponse } from "next/server";
   },
   session: {
     strategy: 'jwt'
+    
   }
 }
 
