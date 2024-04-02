@@ -4,6 +4,7 @@ import VolunteerCard from "@/app/components/Card/VolunteerCard";
 import { getServerSession } from "next-auth";
 import  authOptions  from "@/app/api/auth/[...nextauth]/options";
 import BackToTopBtn from "@/app/components/Buttons/BackToTopBtn";
+import axios from 'axios';
 
 interface User{
     id: number,
@@ -18,9 +19,9 @@ interface User{
 export default async function VolunteerUsers(){
     await getServerSession(authOptions)
 
-    const res = await fetch(`https://new-relief-app.vercel.app/api/admin/dashboard/view-volunteer/users`)
+    const res = await axios(`https://new-relief-app.vercel.app/api/admin/dashboard/view-volunteer/users`)
     
-    const users: User[] = await res.json()
+    const users: User[] = await res.data()
 
     return(
         <>

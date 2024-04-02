@@ -96,7 +96,7 @@ import { useSession } from 'next-auth/react';
                 name="password"
                 type="password"
                 autoComplete="password"
-                placeholder='admin1234'
+                placeholder='adminuser'
                 required
                 value={credentials.password}
                 onChange={handleChange}
