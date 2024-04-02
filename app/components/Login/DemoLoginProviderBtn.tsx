@@ -10,8 +10,8 @@ import { useSession } from 'next-auth/react';
       const router = useRouter();
       const session = useSession()
       const [credentials, setCredentials] = useState({
-              email: '',
-              password: ''
+              email: 'admin@gmail.com',
+              password: 'adminuser'
       });
       
       useEffect(() => {
@@ -22,9 +22,7 @@ import { useSession } from 'next-auth/react';
         e.preventDefault();
         try { 
           const res = await signIn('credentials', {
-            // ...credentials,
-            email: 'admin@gmail.com', 
-            password: 'adminuser',
+            ...credentials,
             redirect: false
           
           })
