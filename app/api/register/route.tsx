@@ -31,13 +31,13 @@ export async function POST(request: NextRequest){
         return NextResponse.json('A user with these credentials already exists', {status: 400})
     }
     
-    const hasedpassword = await bcyrpt.hash(password, 10);
+    const hashedpassword = await bcyrpt.hash(password, 10);
 
     const newUser = await prisma.user.create({
         data: {
             name,
             email, 
-            password: hasedpassword
+            password: hashedpassword
         }
     })
 
