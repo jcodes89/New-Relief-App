@@ -34,8 +34,9 @@ import googleImg from '@/public/images/7123025_logo_google_g_icon.png'
           })
           
           if(res?.ok){
+            router.prefetch('/')
+            router.push('/')
             router.refresh()
-            router.replace('/')
           }else {
             alert('Incorrect email or password, please try again.')
           }
