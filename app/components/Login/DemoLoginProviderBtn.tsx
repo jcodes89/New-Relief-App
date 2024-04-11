@@ -26,7 +26,7 @@ import { useSession } from 'next-auth/react';
             redirect: false
         
           })
-          router.refresh()
+          
 
           setCredentials({
               email: '',
@@ -35,6 +35,7 @@ import { useSession } from 'next-auth/react';
           
           if(res?.ok){
             router.prefetch('/')
+            router.refresh()
           } else {
             alert('Incorrect email or password, please try again.')
           }
