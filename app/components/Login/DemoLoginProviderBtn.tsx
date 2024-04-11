@@ -10,8 +10,8 @@ import { useSession } from 'next-auth/react';
       const router = useRouter();
       const session = useSession()
       const [credentials, setCredentials] = useState({
-              email: 'admin@gmail.com',
-              password: 'adminuser'
+              email: process.env.DEMO_EMAIL,
+              password: process.env.DEMO_PASSWORD
       });
       
       useEffect(() => {
@@ -23,7 +23,7 @@ import { useSession } from 'next-auth/react';
         try { 
           const res = await signIn('credentials', {
             ...credentials,
-            redirect: false
+            redirect: true
           
           })
           setCredentials({
@@ -33,10 +33,11 @@ import { useSession } from 'next-auth/react';
           
           if(res?.ok){
             router.refresh()
+            router.replace('/')
           } else {
             alert('Incorrect email or password, please try again.')
           }
-          router.push('/')
+          
 
         } catch (error) {
           console.log(error);

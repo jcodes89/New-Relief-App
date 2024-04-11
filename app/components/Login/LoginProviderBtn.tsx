@@ -25,7 +25,7 @@ import googleImg from '@/public/images/7123025_logo_google_g_icon.png'
         try { 
           const res = await signIn('credentials', {
             ...credentials,
-            redirect: false
+            redirect: true
           
           })
           setCredentials({
@@ -35,10 +35,11 @@ import googleImg from '@/public/images/7123025_logo_google_g_icon.png'
           
           if(res?.ok){
             router.refresh()
+            router.replace('/')
           }else {
             alert('Incorrect email or password, please try again.')
           }
-          router.push('/')
+          
 
         } catch (error) {
           console.log(error);
