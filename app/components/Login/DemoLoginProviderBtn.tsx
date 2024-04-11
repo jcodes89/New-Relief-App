@@ -23,17 +23,18 @@ import { useSession } from 'next-auth/react';
         try { 
           const res = await signIn('credentials', {
             ...credentials,
-            redirect: true
-          
+            redirect: false
+        
           })
+          router.refresh()
+
           setCredentials({
               email: '',
               password: ''
           })
           
           if(res?.ok){
-            router.refresh()
-            router.replace('/')
+            router.prefetch('/')
           } else {
             alert('Incorrect email or password, please try again.')
           }

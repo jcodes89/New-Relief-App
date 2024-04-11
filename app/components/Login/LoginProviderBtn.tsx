@@ -25,7 +25,7 @@ import googleImg from '@/public/images/7123025_logo_google_g_icon.png'
         try { 
           const res = await signIn('credentials', {
             ...credentials,
-            redirect: true
+            redirect: false
           
           })
           setCredentials({
