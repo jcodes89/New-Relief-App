@@ -10,8 +10,8 @@ import { useSession } from 'next-auth/react';
       const router = useRouter();
       const session = useSession()
       const [credentials, setCredentials] = useState({
-              email: process.env.DEMO_EMAIL,
-              password: process.env.DEMO_PASSWORD
+              email: 'admin@gmail.com',
+              password: 'adminuser'
       });
       
       useEffect(() => {
